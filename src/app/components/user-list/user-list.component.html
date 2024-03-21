@@ -1,0 +1,11 @@
+<div class="users_wrapper">
+    @for(user of usersService.filterUsers(); track user.id){
+        <app-user-item
+            [title]="user.title"
+            [category]="user.category"
+            [price]="user.price"
+            [rating]="user.rating"
+            [image]="user.images[0]"
+        />
+    }
+</div>

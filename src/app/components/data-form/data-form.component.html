@@ -1,0 +1,34 @@
+<div class="filtersForm">
+
+<div class="filter">
+<b>Search title:</b>
+<input class="choice" [(ngModel)]="usersService.nameValue">
+</div>
+
+<div class="filter">
+    <b>Price range: {{usersService.selectedPrice}}</b>
+    <div class="range"><p>0</p><p>{{usersService.maxPrice}}</p></div>
+    <input class="range-input" type="range" min="0" [max]="usersService.maxPrice" step="100" [(ngModel)]="usersService.selectedPrice">
+    
+    </div>
+
+<div class="filter">
+<b>Search category:</b>
+<select class="choice" [(ngModel)]="usersService.selectedCategory">
+    @for(category of usersService.categories; track category){
+        <option  [value]="category">{{ category }}</option>
+    }
+</select>  
+</div>
+
+
+
+<div class="filter">
+<b>Rating range: {{usersService.selectedRating}}</b>
+<div class="range"><p>0</p><p>5</p>  </div>
+<input class="range-input" type="range" min="0" [max]="5" step="1" [(ngModel)]="usersService.selectedRating">
+
+</div>
+
+
+</div>

@@ -1,0 +1,16 @@
+<div class="user_item">
+    <img src="{{image}}" alt="img">
+    <p class="info">Title: {{title}}</p>
+    <p class="info">Category: {{category}}</p>
+    <p class="info">Price: {{price | currency : '$' : 'symbol' : '3.0'  }}</p>
+    <div class="info aic">
+    @for (star of [].constructor(fullStars); track star){
+        <i class="fa fa-star active"></i>
+    }
+    @for (star of [].constructor(emptyStars); track star){
+        <i class="fa fa-star"></i>
+    }
+    </div>
+
+<!-- Мы такой метод итерации не изучали, но он вроде удобный -->
+</div>
